@@ -47,12 +47,12 @@ inoremap <A-j> <C-o>j
 inoremap <A-k> <C-o>k
 inoremap <A-l> <C-o>l
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 command WW :execute ':silent w !sudo tee % > /dev/null' | :edit!
 map <S-q> :noh<cr>
 map <C-a> :A<cr>
-"map <C-t> :pop<cr>
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+map <C-p> :pop<cr>
+
 set background=dark
 colorscheme seoul256
 let g:seoul256_background = 233
@@ -76,7 +76,6 @@ set scs
 set showmatch "(), {}
 syntax on
 set t_Co=256
-let g:Powerline_symbols='fancy'
 "Enable mouse click
 "set completeopt=menuone,preview,longest
 set completeopt=menuone
@@ -97,10 +96,13 @@ set clipboard=unnamedplus
 set selection=inclusive
 set linebreak
 set wildmenu
-set scrolloff=5
 
 let g:LargeFile=10
 set cursorline
+set tagstack
+
+
+
 
 highlight TagbarHighlight guifg=Green ctermbg=DarkGray
 au WinEnter * highlight Cursorline ctermbg=235

@@ -93,7 +93,6 @@ if count(g:vimified_packages, 'general')
     " Keep NERDTree window fixed between multiple toggles
     "set winfixwidth
 
-
     Bundle 'kana/vim-textobj-user'
     Bundle 'vim-scripts/YankRing.vim'
     let g:yankring_replace_n_pkey = '<leader>['
@@ -105,7 +104,7 @@ if count(g:vimified_packages, 'general')
     let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown"]
 
     Bundle 'Spaceghost/vim-matchit'
-    Bundle 'kien/ctrlp.vim'
+    "Bundle 'kien/ctrlp.vim'
     let g:ctrlp_working_path_mode = ''
 
     Bundle 'vim-scripts/scratch.vim'
@@ -125,6 +124,23 @@ if count(g:vimified_packages, 'fancy')
 
     Bundle 'vim-airline/vim-airline'
     Bundle 'vim-airline/vim-airline-themes'
+    let g:airline_enabled=1
+    let g:airline#extensions#tabline#enabled = 0
+    let g:airline#extensions#tabline#left_sep = ' '
+    let g:airline#extensions#tabline#left_alt_sep = '|'
+    let g:airline_detect_modified=1
+    let g:airline#extensions#hunks#enabled = 1
+    let g:airline_theme="papercolor"
+    let g:airline#extensions#branch#enabled = 1
+    let g:airline#extensions#branch#empty_message = ' '
+    let g:airline#extensions#tagbar#enabled = 1
+    let g:airline#extensions#whitespace#enabled = 1
+    let g:airline_left_sep = '▶'
+    let g:airline_right_sep = '◀'
+    if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+    endif
+    let g:airline_symbols.space = "\ua0"
 endif
 " }}}
 
@@ -158,7 +174,7 @@ if count(g:vimified_packages, 'coding')
     nmap <leader>t :TagbarToggle<CR>
 	let g:tagbar_left=1
 	let g:tagbar_sort = 0
-	let g:tagbar_width = 40
+	let g:tagbar_width = 60
 	hi TagbarHighlight ctermbg=White ctermfg=Black
 
     Bundle 'gregsexton/gitv'
@@ -197,9 +213,10 @@ if count(g:vimified_packages, 'coding')
     " Check API docs for current word in Zeal: http://zealdocs.org/
     nnoremap <leader>d :!zeal --query "<cword>"&<CR><CR>
 
-	"Bundle 'Shougo/neocomplcache.vim'
-	"let g:neocomplcache_enable_smart_case = 1
-	"let g:neocomplcache_enable_at_startup = 1
+	Bundle 'Shougo/neocomplcache.vim'
+	let g:neocomplcache_enable_smart_case = 1
+	let g:neocomplcache_enable_at_startup = 1
+    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 	"Bundle 'Valloric/YouCompleteMe'
 	"Bundle 'rdnetto/YCM-Generator'
 endif
