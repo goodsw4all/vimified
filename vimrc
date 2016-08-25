@@ -1,4 +1,5 @@
 " vimrc
+
 " Author: Zaiste! <oh@zaiste.net>
 " Source: https://github.com/zaiste/vimified
 "
@@ -61,11 +62,11 @@ endif
 if count(g:vimified_packages, 'general')
     Bundle 'editorconfig/editorconfig-vim'
 
-    Bundle 'rking/ag.vim'
-    nnoremap <leader>a :Ag -i<space>
+"    Bundle 'rking/ag.vim'
+"    nnoremap <leader>a :Ag -i<space>
 
-    Bundle 'matthias-guenther/hammer.vim'
-    nmap <leader>p :Hammer<cr>
+    "Bundle 'matthias-guenther/hammer.vim'
+    "nmap <leader>p :Hammer<cr>
 
     Bundle 'junegunn/vim-easy-align'
     Bundle 'tpope/vim-endwise'
@@ -77,11 +78,20 @@ if count(g:vimified_packages, 'general')
     Bundle 'tpope/vim-eunuch'
 
     Bundle 'scrooloose/nerdtree'
+	Bundle 'fholgado/minibufexpl.vim'
+	"let g:miniBufExplSplitBelow=1
+	"let g:miniBufExplMapWindowNavVim = 1
+	let g:miniBufExplMapWindowNavArrows = 1
+	"let g:miniBufExplMapCTabSwitchBufs = 1
+	let g:miniBufExplModSelTarget = 1
+	let g:miniBufExplBuffersNeeded = 1
+	let g:miniBufExplUseSingleClick = 1
+	let g:miniBufExplSortBy="name"
     " Disable the scrollbars (NERDTree)
     set guioptions-=r
     set guioptions-=L
     " Keep NERDTree window fixed between multiple toggles
-    set winfixwidth
+    "set winfixwidth
 
 
     Bundle 'kana/vim-textobj-user'
@@ -146,6 +156,10 @@ endif
 if count(g:vimified_packages, 'coding')
     Bundle 'majutsushi/tagbar'
     nmap <leader>t :TagbarToggle<CR>
+	let g:tagbar_left=1
+	let g:tagbar_sort = 0
+	let g:tagbar_width = 40
+	hi TagbarHighlight ctermbg=White ctermfg=Black
 
     Bundle 'gregsexton/gitv'
 
@@ -168,10 +182,10 @@ if count(g:vimified_packages, 'coding')
     " same in visual mode
     :vmap <leader>f y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:cw<CR><CR>
 
-    Bundle 'scrooloose/syntastic'
-    let g:syntastic_enable_signs=1
-    let g:syntastic_auto_loc_list=1
-    let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby', 'python', ], 'passive_filetypes': ['html', 'css', 'slim'] }
+"    Bundle 'scrooloose/syntastic'
+"    let g:syntastic_enable_signs=1
+"    let g:syntastic_auto_loc_list=1
+"    let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby', 'python', ], 'passive_filetypes': ['html', 'css', 'slim'] }
 
     " --
 
@@ -182,6 +196,12 @@ if count(g:vimified_packages, 'coding')
 
     " Check API docs for current word in Zeal: http://zealdocs.org/
     nnoremap <leader>d :!zeal --query "<cword>"&<CR><CR>
+
+	"Bundle 'Shougo/neocomplcache.vim'
+	"let g:neocomplcache_enable_smart_case = 1
+	"let g:neocomplcache_enable_at_startup = 1
+	"Bundle 'Valloric/YouCompleteMe'
+	"Bundle 'rdnetto/YCM-Generator'
 endif
 " }}}
 
@@ -220,10 +240,16 @@ endif
 " _. Clang {{{
 if count(g:vimified_packages, 'clang')
     Bundle 'Rip-Rip/clang_complete'
-    Bundle 'LucHermitte/clang_indexer'
+	let g:clang_library_path="/usr/lib/x86_64-linux-gnu/"
+	let g:clang_complete_auto=1
+	let g:clang_complete_copen=0
+	let g:clang_close_preview=1
+	Bundle 'LucHermitte/clang_indexer'
     Bundle 'newclear/lh-vim-lib'
     Bundle 'LucHermitte/vim-clang'
     Bundle 'devx/c.vim'
+    Bundle 'vim-scripts/a.vim'
+    Bundle 'wolfpython/cscope_map.vim'
 endif
 " }}}
 
@@ -291,7 +317,8 @@ endif
 
 " _. Rust {{{
 if count(g:vimified_packages, 'rust')
-    Bundle 'wting/rust.vim'
+    Bundle 'rust-lang/rust.vim'
+	Bundle 'racer-rust/vim-racer'
 endif
 " }}}
 
@@ -308,10 +335,11 @@ if count(g:vimified_packages, 'color')
     Bundle 'tomasr/molokai'
     Bundle 'zaiste/Atom'
     Bundle 'w0ng/vim-hybrid'
-    Bundle 'chriskempson/base16-vim'
+    "Bundle 'chriskempson/base16-vim'
     Bundle 'Elive/vim-colorscheme-elive'
     Bundle 'zeis/vim-kolor'
     Bundle 'xero/sourcerer.vim'
+    Bundle 'junegunn/seoul256.vim'
 
     " During installation the molokai colorscheme might not be avalable
     if filereadable(globpath(&rtp, 'colors/molokai.vim'))
@@ -446,7 +474,7 @@ if exists('+relativenumber')
   set relativenumber
 endif
 set numberwidth=3
-set winwidth=83
+"set winwidth=83
 set ruler
 if executable('zsh')
   set shell=zsh\ -l
@@ -464,7 +492,7 @@ set completeopt=longest,menuone,preview
 set autoindent
 set tabstop=4
 set softtabstop=4
-set textwidth=80
+"set textwidth=80
 set shiftwidth=4
 set expandtab
 set wrap
@@ -593,7 +621,7 @@ nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
-nmap <tab> :NERDTreeToggle<cr>
+"nmap <tab> :NERDTreeToggle<cr>
 
 " }}}
 
