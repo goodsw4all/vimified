@@ -257,7 +257,7 @@ endif
 " _. Clang {{{
 if count(g:vimified_packages, 'clang')
     Bundle 'Rip-Rip/clang_complete'
-	let g:clang_library_path="/usr/lib/x86_64-linux-gnu/"
+	let g:clang_library_path="/usr/lib/llvm-3.8/lib/"
 	let g:clang_complete_auto=1
 	let g:clang_complete_copen=0
 	let g:clang_close_preview=1
@@ -403,9 +403,9 @@ noremap <right> <nop>
 " Yank from current cursor position to end of line
 map Y y$
 " Yank content in OS's clipboard. `o` stands for "OS's Clipoard".
-vnoremap <leader>yo "*y
+"vnoremap <leader>yo "*y
 " Paste content from OS's clipboard
-nnoremap <leader>po "*p
+"nnoremap <leader>po "*p
 
 " clear highlight after search
 noremap <silent><Leader>/ :nohls<CR>
