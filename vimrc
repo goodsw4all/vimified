@@ -71,7 +71,7 @@ if count(g:vimified_packages, 'general')
     Bundle 'junegunn/vim-easy-align'
     Bundle 'tpope/vim-endwise'
     Bundle 'tpope/vim-repeat'
-    Bundle 'tpope/vim-speeddating'
+    "Bundle 'tpope/vim-speeddating'
     Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-unimpaired'
     Bundle 'maxbrunsfeld/vim-yankstack'
@@ -213,9 +213,9 @@ if count(g:vimified_packages, 'coding')
     " Check API docs for current word in Zeal: http://zealdocs.org/
     nnoremap <leader>d :!zeal --query "<cword>"&<CR><CR>
 
-	Bundle 'Shougo/neocomplcache.vim'
-	let g:neocomplcache_enable_smart_case = 1
-	let g:neocomplcache_enable_at_startup = 1
+	"Bundle 'Shougo/neocomplcache.vim'
+	"let g:neocomplcache_enable_smart_case = 1
+	"let g:neocomplcache_enable_at_startup = 1
     inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 	"Bundle 'Valloric/YouCompleteMe'
 	"Bundle 'rdnetto/YCM-Generator'
@@ -257,7 +257,8 @@ endif
 " _. Clang {{{
 if count(g:vimified_packages, 'clang')
     Bundle 'Rip-Rip/clang_complete'
-	let g:clang_library_path="/usr/lib/x86_64-linux-gnu/"
+	"let g:clang_library_path="/usr/lib/x86_64-linux-gnu/"
+    let g:clang_library_path='/usr/lib/llvm-3.8/lib'
 	let g:clang_complete_auto=1
 	let g:clang_complete_copen=0
 	let g:clang_close_preview=1
