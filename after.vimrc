@@ -49,8 +49,6 @@ inoremap <A-l> <C-o>l
 
 command WW :execute ':silent w !sudo tee % > /dev/null' | :edit!
 map <S-q> :noh<cr>
-map <C-a> :A<cr>
-
 map <C-p> :pop<cr>
 
 set background=dark
@@ -106,3 +104,5 @@ set tagstack
 
 highlight TagbarHighlight guifg=Green ctermbg=DarkGray
 au WinEnter * highlight Cursorline ctermbg=235
+
+map <C-a> :A<cr>
