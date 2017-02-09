@@ -78,6 +78,7 @@ if count(g:vimified_packages, 'general')
     Bundle 'tpope/vim-eunuch'
 
     Bundle 'scrooloose/nerdtree'
+    let g:NERDTreeWinPos = "right"
 	Bundle 'fholgado/minibufexpl.vim'
 	"let g:miniBufExplSplitBelow=1
 	"let g:miniBufExplMapWindowNavVim = 1
