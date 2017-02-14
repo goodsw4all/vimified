@@ -6,8 +6,8 @@ map <F1> :
     "map <F2> :w<cr>:!gcc -Wall % -o %< && ./%<
 "map <F2> :w<cr>:!gcc -Wall % -o %< && ./%<
 "map <F2> :set makeprg=./build.sh\ uImage<cr>:w<cr>:make<cr>:ccl<cr>:cw<cr>
-"map <F2> :wa<cr>:!colormake<cr>
-map <F2> :so ./.vimrc<cr>
+map <F2> :wa<cr>:!colormake<cr>
+"map <F2> :so ./.vimrc<cr>
 map <F3> :bp<cr>
 map <F4> :bn<cr>
 
@@ -97,12 +97,9 @@ set wildmenu
 
 let g:LargeFile=10
 set cursorline
-set tagstack
-
-
-
+"set tagstack
 
 highlight TagbarHighlight guifg=Green ctermbg=DarkGray
 au WinEnter * highlight Cursorline ctermbg=235
-
+autocmd VimEnter * nested :TagbarOpen
 map <C-a> :A<cr>

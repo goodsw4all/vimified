@@ -176,6 +176,7 @@ if count(g:vimified_packages, 'coding')
 	let g:tagbar_left=1
 	let g:tagbar_sort = 0
 	let g:tagbar_width = 60
+    let g:tagbar_autoshowtag = 1
 	hi TagbarHighlight ctermbg=White ctermfg=Black
 
     Bundle 'gregsexton/gitv'
@@ -645,13 +646,12 @@ vmap <C-Down> ]egv
 " }}}
 
 " . folding {{{
-
 set foldlevelstart=0
 set foldmethod=syntax
 
 " Space to toggle folds.
-nnoremap <space> za
-vnoremap <space> za
+"noremap <space> za
+"vnoremap <space> za
 
 " Make zO recursively open whatever top level fold we're in, no matter where the
 " cursor happens to be.
