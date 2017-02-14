@@ -259,8 +259,7 @@ endif
 " _. Clang {{{
 if count(g:vimified_packages, 'clang')
     Bundle 'Rip-Rip/clang_complete'
-	"let g:clang_library_path="/usr/lib/x86_64-linux-gnu/"
-    let g:clang_library_path='/usr/lib/llvm-3.8/lib'
+	let g:clang_library_path="/usr/lib/x86_64-linux-gnu/"
 	let g:clang_complete_auto=1
 	let g:clang_complete_copen=0
 	let g:clang_close_preview=1
