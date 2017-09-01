@@ -26,7 +26,7 @@ map <F9> :NERDTreeToggle<cr>
 map <F10> :BufExplorer<cr>
 
 map <F11> :BufOnly<cr>
-map <F12> :!cscope -R -k -b<CR>:cs reset<CR>
+map <F12> :!cscope -Rbq<CR>:cs reset<CR>
 
 " buffer list
 map ,1 :b!1<CR>
@@ -103,3 +103,17 @@ highlight TagbarHighlight guifg=Green ctermbg=DarkGray
 au WinEnter * highlight Cursorline ctermbg=235
 autocmd VimEnter * nested :TagbarOpen
 map <C-a> :A<cr>
+
+" In your ~/.vimrc
+"
+" Normal mode
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+
+" Insert mode
+inoremap <C-j> <ESC>:m .+1<CR>==gi
+inoremap <C-k> <ESC>:m .-2<CR>==gi
+
+" Visual mode
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv

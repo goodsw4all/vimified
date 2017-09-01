@@ -81,13 +81,13 @@ if count(g:vimified_packages, 'general')
     let g:NERDTreeWinPos = "right"
 	Bundle 'fholgado/minibufexpl.vim'
 	"let g:miniBufExplSplitBelow=1
-	"let g:miniBufExplMapWindowNavVim = 1
+	let g:miniBufExplMapWindowNavVim = 1
 	let g:miniBufExplMapWindowNavArrows = 1
 	"let g:miniBufExplMapCTabSwitchBufs = 1
 	let g:miniBufExplModSelTarget = 1
 	let g:miniBufExplBuffersNeeded = 1
 	let g:miniBufExplUseSingleClick = 1
-	let g:miniBufExplSortBy="name"
+	"let g:miniBufExplSortBy="name"
     " Disable the scrollbars (NERDTree)
     set guioptions-=r
     set guioptions-=L
@@ -132,10 +132,10 @@ if count(g:vimified_packages, 'fancy')
     let g:airline_detect_modified=1
     let g:airline#extensions#hunks#enabled = 1
     let g:airline_theme="papercolor"
-    let g:airline#extensions#branch#enabled = 1
+    let g:airline#extensions#branch#enabled = 0
     let g:airline#extensions#branch#empty_message = ' '
     let g:airline#extensions#tagbar#enabled = 1
-    let g:airline#extensions#whitespace#enabled = 1
+    let g:airline#extensions#whitespace#enabled = 0
     let g:airline_left_sep = '▶'
     let g:airline_right_sep = '◀'
     if !exists('g:airline_symbols')
@@ -259,7 +259,7 @@ endif
 " _. Clang {{{
 if count(g:vimified_packages, 'clang')
     Bundle 'Rip-Rip/clang_complete'
-	let g:clang_library_path="/usr/lib/x86_64-linux-gnu/"
+	let g:clang_library_path="/usr/lib/x86_64-linux-gnu/libclang-3.8.so"
 	let g:clang_complete_auto=1
 	let g:clang_complete_copen=0
 	let g:clang_close_preview=1
@@ -571,8 +571,8 @@ autocmd BufWritePre * :%s/\s\+$//e
 " . searching {{{
 
 " sane regexes
-nnoremap / /\v
-vnoremap / /\v
+" nnoremap / /\v
+" vnoremap / /\v
 
 set ignorecase
 set smartcase

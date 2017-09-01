@@ -115,11 +115,11 @@ if ! shopt -oq posix; then
 fi
 
 PATH=$PATH:~/bin:~/Development/Tools/xmind/XMind_amd64
-alias odroid='cd ~/Development/refBoard/AmLogic/odroid-c2/android'
+alias odroid='cd ~/Development/platform/odroid-c2'
 
 GIT_PROMPT_ONLY_IN_REPO=0
 # GIT_PROMPT_FETCH_REMOTE_STATUS=0   # uncomment to avoid fetching remote status
-# GIT_PROMPT_SHOW_UPSTREAM=1 # uncomment to show upstream tracking branch
+GIT_PROMPT_SHOW_UPSTREAM=1 # uncomment to show upstream tracking branch
 GIT_PROMPT_SHOW_UNTRACKED_FILES=no # can be no, normal or all; determines counting of untracked files
 # GIT_PROMPT_SHOW_CHANGED_FILES_COUNT=0 # uncomment to avoid printing the number of changed files
 # GIT_PROMPT_STATUS_COMMAND=gitstatus_pre-1.7.10.sh # uncomment to support Git older than 1.7.10
@@ -127,12 +127,17 @@ GIT_PROMPT_SHOW_UNTRACKED_FILES=no # can be no, normal or all; determines counti
 # GIT_PROMPT_END=...      # uncomment for custom prompt end sequence
 # as last entry source the gitprompt script
 # GIT_PROMPT_THEME=Custom # use custom theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)
-# GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
-# GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color schem
+GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
+#GIT_PROMPT_THEME=Default # use theme optimized for solarized color schem
+# use theme optimized for solarized color schem
 source ~/.bash-git-prompt/gitprompt.sh
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+alias kh='cd ~/Development/qemu-kernel-debugging/buildroot'
+alias pp='cd ~/Development/practice'
+alias pa='cd ~/Development/ATeam'
+alias wa='cd ~/Development/ATeam/LX520BSP_MINE/rakSkeEye/plugins/plugin_http'
+export LC_ALL=en_US.UTF-8
 
 # function
 
